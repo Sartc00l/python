@@ -1,5 +1,13 @@
 import tkinter as tk
 from tkinter import ttk
+class Item:
+    def __init__(self):
+        self.name = None
+        self.price = None
+class InventoryItem(Item):
+    def __init__(self):
+        self.quantity
+
 
 class App: 
     def __init__(self): 
@@ -43,7 +51,6 @@ class App:
             listvariable=self.inventory
         )
         self.itemsListB.grid(row=0,column=3,rowspan=5,**p)
-        
         
         
 initComponent = App()
