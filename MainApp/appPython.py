@@ -17,6 +17,12 @@ class App:
         self.win.title("Ещкере")#title and window size
         self.setUI()
         self.win.mainloop()#запуск
+    def SettingsWindow(self):
+        self.setWin = tk.Tk()
+        self.setWin.geometry("500x500+100+100")
+        self.setWin.title("Settings")
+        self.setWin.mainloop()
+    
         
     def setUI(self):
         p = {'padx':10,'pady':10}
@@ -38,13 +44,13 @@ class App:
         self.priceEntry.grid(row=2,column=1,**p)
         
         self.sellbtn = ttk.Button(text="Sell")
-        self.sellbtn.grid(row=2,column= 1,columnspan=2,**p)
+        self.sellbtn.grid(row=2,column= 2,columnspan=2,**p)
         self.buybtn = ttk.Button(text="купит")
         self.buybtn.grid(row=4,column= 0,columnspan=1,**p)
         
         
         
-        invItems = ["с","ос","ал"]
+        invItems = ["абаюдна","ос","ал"]
         self.inventory = tk.Variable(value = invItems)
         self.itemsListB = tk.Listbox(
             height=40,
@@ -58,6 +64,10 @@ class App:
         file_menu.add_command(
         label='Exit',
         command=self.win.destroy
+        )
+        file_menu.add_command(
+            label='Settings',
+            command = self.SettingsWindow
         )
         menubar.add_cascade(
         label="File",
